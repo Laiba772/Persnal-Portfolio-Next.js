@@ -1,0 +1,86 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background:  linear-gradient(to right, #5E35B1, #101010df);;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: linear-gradient(to right, #5E35B1, #101010);;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Add this to your global CSS file, or inside your component with styled-components or Tailwind's @layer directive */
+/* Add this to your global CSS file or inside the component */
+
+/* Keyframe for fade-in and slide effect */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px); /* Slide from the top */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End position */
+  }
+}
+
+.fade-in-element {
+  animation: fadeInSlide 1s ease forwards;
+}
+
+/* Apply this animation to the navbar items, name, and FaBars icon */
+.nav-item, .nav-name, .fa-bars {
+  animation: fadeInSlide 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Delay the animation for each navbar item */
+.nav-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.nav-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.nav-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.nav-item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.nav-item:nth-child(5) {
+  animation-delay: 1s;
+}
+.nav-item:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+/* Apply delays to name and FaBars icon */
+.nav-name {
+  animation-delay: 0s; /* Appears first */
+}
+
+.fa-bars {
+  animation-delay: 1.2s; /* Appears last */
+}
